@@ -3,3 +3,14 @@
 }
 
 <h1>TP Paquetes Turisticos</h1>
+
+<a href='@Url.Action("SelectPaquete")'><span>Ver opciones de viaje</span></a>
+
+<h3>Opciones de viaje creadas</h1>
+
+<div>
+    @foreach (string key in ViewBag.Paquete.Keys)
+    {
+        <h3>@(ViewBag.Paquete[key])</h3>
+    }
+</div>

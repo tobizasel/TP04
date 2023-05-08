@@ -1,0 +1,43 @@
+
+
+<form action="">
+
+    <h4>Elegir destino</h4>
+
+    <select name="destino">
+        @foreach (string item in ViewBag.destinos)
+        {
+            <option value=@item>@item</option>
+        }
+    </select>
+
+    <h4>Elegir hotel</h4>
+
+    <select name="hotel">
+        @foreach (string item in ViewBag.hoteles)
+        {
+            <option value=@item>@item</option>
+        }
+    </select>
+
+    <h4>Elegir aereolinea</h4>    
+
+    <select name="aereolinea">
+        @foreach (string item in ViewBag.aereos)
+        {
+            <option value=@item>@item</option>
+        }
+    </select>
+
+    <h4>Elegir excursion</h4>    
+
+    <select name="excursiones">
+        @foreach (string item in ViewBag.excursiones)
+        {
+            <option value=@item>@item</option>
+        }
+    </select>
+
+    <button type="submit">Enviar paquete</button>
+</form>
+
