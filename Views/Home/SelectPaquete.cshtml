@@ -1,9 +1,10 @@
+<h1>@ViewBag.destino</h1>
 
 
 <form action="">
 
     <h4>Elegir destino</h4>
-
+    
     <select name="destino">
         @foreach (string item in ViewBag.destinos)
         {
@@ -12,6 +13,14 @@
     </select>
 
     <h4>Elegir hotel</h4>
+
+    <div>
+        @foreach (string item in ViewBag.rutaHoteles)
+        {
+            <img src="wwwroot/img/"@item>
+        }
+        
+    </div>
 
     <select name="hotel">
         @foreach (string item in ViewBag.hoteles)
