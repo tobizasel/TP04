@@ -6,7 +6,7 @@ public class HomeController : Controller
 {
     public IActionResult Index()
     {
-        ViewBag.Paquete = ORTWorld.Paquetes;
+        ViewBag.Paquetes = ORTWorld.Paquetes;
         return View();
     }
 
@@ -21,13 +21,14 @@ public class HomeController : Controller
 
     public IActionResult GuardarPaquete(string destinoSel, string hotelSel, string aereolineaSel, string excursionSel){
 
-        
-        if (ORTWorld.IngresarPaquete(destinoSel))
-        {
+         if (ORTWorld.IngresarPaquete(destinoSel)){
+
             ORTWorld.Paquetes.Add(destinoSel, new Paquete(hotelSel, aereolineaSel, excursionSel));
+            return RedirectToAction("Index");
+        } else {
+            return RedirectToAction("SelectPaquete");
         }
 
-        return View("index");
     }
 
 }

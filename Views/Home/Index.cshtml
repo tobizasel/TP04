@@ -6,11 +6,25 @@
 
 <a href='@Url.Action("SelectPaquete")'><span>Ver opciones de viaje</span></a>
 
-<h3>Opciones de viaje creadas</h1>
 
-<div>
-    @foreach (string key in ViewBag.Paquete.Keys)
+
+<section>
+    <h3>Opciones de viaje creadas</h1>
+    <div class="paquetes">
+
+    @foreach (string key in ViewBag.Paquetes.Keys)
     {
-        <h3>@(ViewBag.Paquete[key])</h3>
+    <div class="paquete">
+        <h3 class="paquete__titulo">@key</h3>
+        
+        
+         <h5 class="hotel__titulo">@ViewBag.Paquetes[key].hotel</h5>
+        <img class="hotel__img" src="~/img/@(ViewBag.Paquetes[key].hotel).jpg" alt=@ViewBag.Paquetes[key].hotel>
+        
+        <h5 class="hotel__subtitulo">@ViewBag.Paquetes[key].aereo</h5>
+        <h5 class="hotel__subtitulo">@ViewBag.Paquetes[key].excursion</h5>
+    </div>
     }
-</div>
+    </div>
+        
+</section>
