@@ -6,7 +6,7 @@ public class HomeController : Controller
 {
     public IActionResult Index()
     {
-        ViewBag.Paquete = ORTWorld.Paquete;
+        ViewBag.Paquete = ORTWorld.Paquetes;
         return View();
     }
 
@@ -16,37 +16,18 @@ public class HomeController : Controller
         ViewBag.hoteles = ORTWorld.ListaHoteles;
         ViewBag.aereos = ORTWorld.ListaAereos;
         ViewBag.excursiones = ORTWorld.ListaExcursiones;
-        PasarImagenes();
         return View();
     }
 
-    public void PasarImagenes()
-    {
+    public IActionResult GuardarPaquete(string destinoSel, string hotelSel, string aereolineaSel, string excursionSel){
 
-        List <string> rutaDestinos = new List<string>();
-        List <string> rutaHoteles = new List<string>();
-        List <string> rutaAereos = new List<string>();
-        List <string> rutaExcursiones = new List<string>();
-
-
-        for (int i = 0; i < ORTWorld.ListaDestinos.Count; i++)
-        {   
-            rutaDestinos.Add(ORTWorld.ListaDestinos[i]+".jpg");
-            rutaAereos.Add(ORTWorld.ListaAereos[i]+".jpg");
-            rutaExcursiones.Add(ORTWorld.ListaHoteles[i]+".jpg");
-        }
-
-        foreach (string item in ORTWorld.ListaHoteles)
-        {
-            rutaHoteles.Add(item+".jpg");
-
-        }
-
-        // ViewBag.rutaAereos = rutaAereos;
-        // ViewBag.rutaDestinos = rutaDestinos;
-        // ViewBag.rutaExcursiones = rutaExcursiones;
-        ViewBag.rutaHoteles = rutaHoteles;
         
+        if (ORTWorld.IngresarPaquete(destinoSel))
+        {
+            ORTWorld.Paquetes.Add(destinoSel, new Paquete(hotelSel, aereolineaSel, excursionSel));
+        }
 
+        return View("index");
     }
+
 }
