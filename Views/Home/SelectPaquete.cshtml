@@ -3,7 +3,9 @@
 
 <form action='@Url.Action("GuardarPaquete")'>
 
-    <h4>Elegir destino</h4>
+
+    <div class="form__opciones">   
+    <h4 class="form__titulo">Elegir destino</h4>
     
     <select name="destinoSel">
         @foreach (string item in ViewBag.destinos)
@@ -11,8 +13,10 @@
             <option value=@item>@item</option>
         }
     </select>
+    </div>
+    <div class="form__opciones">   
 
-    <h4>Elegir hotel</h4>
+    <h4 class="form__titulo">Elegir hotel</h4>
 
     <select name="hotelSel">
         @foreach (string item in ViewBag.hoteles)
@@ -20,7 +24,7 @@
             <option value=@item>@item</option>
         }
     </select>
-
+    
     <div class="imagenes">
         @foreach (string item in ViewBag.hoteles)
         {
@@ -31,8 +35,9 @@
         }
         
     </div>
-
-    <h4>Elegir aereolinea</h4>    
+        
+    <div class="form__opciones">   
+    <h4 class="form__titulo">Elegir aereolinea</h4>    
 
     <select name="aereolineaSel">
         @foreach (string item in ViewBag.aereos)
@@ -40,7 +45,7 @@
             <option value=@item>@item</option>
         }
     </select>
-
+    </div>
     <div class="imagenes">
         @foreach (string item in ViewBag.aereos)
         {
@@ -50,16 +55,16 @@
             </div>
         }
     </div>
+    <div class="form__opciones"> 
+        <h4 class="form__titulo">Elegir excursion</h4>    
 
-    <h4>Elegir excursion</h4>    
-
-    <select name="excursionSel">
-        @foreach (string item in ViewBag.excursiones)
-        {
-            <option value=@item>@item</option>
-        }
-    </select>
-
+        <select name="excursionSel">
+            @foreach (string item in ViewBag.excursiones)
+            {
+                <option value=@item>@item</option>
+            }
+        </select>
+    </div>
         <div class="imagenes">
         @foreach (string item in ViewBag.excursiones)
         {
@@ -71,6 +76,5 @@
         
     </div>
 
-    <button type="submit" class="boton">Enviar paquete</button>
+    <button type="submit" class="button-24">Enviar paquete</button>
 </form>
-

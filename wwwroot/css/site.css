@@ -25,20 +25,31 @@ footer {
   margin: 10px 0px 20px 0px;
 }
 
+.titulo{
+  margin: 2rem 0;
+}
+
+.titulo__boton{
+  margin-bottom: 1rem;
+}
+
+.form__opciones{
+  margin: 2rem 0;
+}
+
 .imagenes{
-  width: 80%;
   margin: auto;
   display: flex;
   align-items: flex-start;
 }
 
 .imagen{
-  margin-top: 7rem;
+  margin: 2rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 10%;
+  width: 20%;
 
 }
 
@@ -47,7 +58,7 @@ footer {
 }
 
 .imagen__imagen{
-  width: 100%;
+  width: 80%;
   height: 5rem;
 }
 
@@ -61,20 +72,34 @@ footer {
   font-family: inherit;
   font-weight: 700;
   background-color: #c7c7c7;
+  border-radius: 6px;
   cursor: pointer;
 }
 
 .paquetes{
   display: flex;
+  justify-content: center;  
+  margin:2rem 0 4rem 0;
+  flex-wrap: nowrap;
 }
 
 .paquete{
     border: 2px solid black;
     border-radius: 5px;
     text-align: center;
-    width: 15%;
+    flex: 1;
 }
 
+.paquete__arriba{
+  position: relative;
+}
+
+.paquete__borrar{
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  color: #000;
+}
 .paquete:not(:last-child){
   margin-right: 3rem;
 }
@@ -100,5 +125,40 @@ footer {
 
 .hotel__subtitulo{
   padding: 1rem 0;
-  border: #c7c7c7 1px solid;
+  border-top: #c7c7c7 1px solid;
+}
+
+.button-24 {
+  background: #272727;
+  border: 1px solid #272727;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #EFF1F3;
+  cursor: pointer;
+  display: inline-block;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 16px;
+  outline: 0;
+  padding: 12px 14px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  margin: 1rem 0 2rem 0;
+}
+
+.button-24:hover,
+.button-24:active {
+  background-color: #EFF1F3;
+  background-position: 0 0;
+  color: #272727;
+}
+
+.button-24:active {
+  opacity: .5;
 }

@@ -2,22 +2,25 @@
     ViewData["Title"] = "TP04";
 }
 
-<h1>TP Paquetes Turisticos</h1>
 
-<a href='@Url.Action("SelectPaquete")'><span>Ver opciones de viaje</span></a>
+<div>
+    <h1 class="titulo">TP Paquetes Turisticos</h1>
 
+    <a href='@Url.Action("SelectPaquete")'><button class="button-24">Ver opciones de viaje</button></a>
+</div>
 
+    <section>
 
-<section>
-    <h3>Opciones de viaje creadas</h1>
+    <h3>Opciones de viaje creadas</h3>
     <div class="paquetes">
 
     @foreach (string key in ViewBag.Paquetes.Keys)
     {
     <div class="paquete">
+    <div class="paquete__arriba">
         <h3 class="paquete__titulo">@key</h3>
-        
-        
+        <a href='@Url.Action("BorrarPaquete", new{key=key})' class="paquete__borrar" type="submit" name=@key><i class="fa-solid fa-xmark"></i></a>
+    </div>
          <h5 class="hotel__titulo">@ViewBag.Paquetes[key].hotel</h5>
         <img class="hotel__img" src="~/img/@(ViewBag.Paquetes[key].hotel).jpg" alt=@ViewBag.Paquetes[key].hotel>
         
@@ -26,5 +29,4 @@
     </div>
     }
     </div>
-        
-</section>
+    </section>
