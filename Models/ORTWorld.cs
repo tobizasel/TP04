@@ -16,5 +16,9 @@ class ORTWorld{
         return true;
     }
 
+    public static void BorrarPaquete(string key){
+        Paquetes.Remove(key);
+    }
+
 
 }

@@ -3,15 +3,15 @@
 }
 
 
-<div>
+<header class="header centrar-texto">
     <h1 class="titulo">TP Paquetes Turisticos</h1>
 
     <a href='@Url.Action("SelectPaquete")'><button class="button-24">Ver opciones de viaje</button></a>
-</div>
+</header>
 
     <section>
 
-    <h3>Opciones de viaje creadas</h3>
+    <h3 class="subtitulo centrar-texto">Opciones de viaje creadas</h3>
     <div class="paquetes">
 
     @foreach (string key in ViewBag.Paquetes.Keys)

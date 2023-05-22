@@ -33,9 +33,7 @@ public class HomeController : Controller
 
     public IActionResult BorrarPaquete(string key){
 
-                ORTWorld.Paquetes.Remove(key);
-    
-
+        ORTWorld.BorrarPaquete(key);
         return RedirectToAction("index");
     }
 
